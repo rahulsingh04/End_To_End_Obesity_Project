@@ -1,0 +1,5 @@
+[ 2024-02-11 22:56:14,208 ] 96 werkzeug - WARNING -  * Debugger is active!
+[ 2024-02-11 22:56:14,231 ] 96 werkzeug - INFO -  * Debugger PIN: 402-074-428
+[ 2024-02-11 22:56:45,972 ] 96 werkzeug - INFO - 127.0.0.1 - - [11/Feb/2024 22:56:45] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-02-11 22:57:30,055 ] 96 werkzeug - INFO - 127.0.0.1 - - [11/Feb/2024 22:57:30] "POST /predictdata HTTP/1.1" 200 -
+[ 2024-02-11 23:11:54,104 ] 96 werkzeug - INFO -  * Detected change in 'E:\\obesity_project\\app.py', reloading

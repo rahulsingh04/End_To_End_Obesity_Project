@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity Disease Prediction</title>
+    <style>
+        /* CSS for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* CSS for the login container */
+        .login {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* CSS for the form labels */
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        /* CSS for the form inputs */
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        /* CSS for the submit button */
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        /* CSS for the result text */
+        h2 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+       <h1>Obesity Disease Prediction </h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Obesity Disease Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label>Gender</label>
+            <select name="Gender" placeholder="Enter you Gender" required>
+                <option value="" disabled selected>Select your Gender</option>
+                <option value="Female">Male</option>
+                <option value="Male">Female</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Age</label>
+            <input type="number" name="Age" placeholder="Enter your Age" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>Height</label>
+            <input type="number" name="Height" placeholder="Enter your Height" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>Weight</label>
+            <input type="number" name="Weight" placeholder="Enter your Weight" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>Family History with Overweight</label>
+            <select name="family_history_with_overweight" placeholder="Family History with Overweight" required>
+                <option value="" disabled selected>Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>FAVC (Frequent Consumption of High Caloric Food)</label>
+            <select name="FAVC" placeholder="FAVC" required>
+                <option value="" disabled selected>Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>FCVC (Frequency of Consumption of Vegetables)</label>
+            <input type="number" name="FCVC" placeholder="Enter FCVC" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>NCP (Number of Main Meals)</label>
+            <input type="number" name="NCP" placeholder="Enter NCP" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>CAEC (Consumption of Food Between Meals)</label>
+            <select name="CAEC" placeholder="CAEC" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Frequently">Frequently</option>
+                <option value="no">No</option>
+                <option value="Always">Always</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>SMOKE</label>
+            <select name="SMOKE" placeholder="SMOKE" required>
+                <option value="" disabled selected>Select</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>CH2O (Consumption of Water Daily)</label>
+            <input type="number" name="CH2O" placeholder="Enter CH2O" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>SCC (Calories Consumption Monitoring)</label>
+            <select name="SCC" placeholder="SCC" required>
+                <option value="" disabled selected>Select</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>FAF (Physical Activity Frequency)</label>
+            <input type="number" name="FAF" placeholder="Enter FAF" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>TUE (Time Using Technology Devices)</label>
+            <input type="number" name="TUE" placeholder="Enter TUE" min="0" required />
+        </div>
+        <div class="mb-3">
+            <label>CALC (Calories Consumed Monitoring)</label>
+            <select name="CALC" placeholder="CALC" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="no">No</option>
+                <option value="Frequently">Frequently</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>MTRANS (Mode of Transport)</label>
+            <select name="MTRANS" placeholder="MTRANS" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Public_Transportation">Public Transportation</option>
+                <option value="Automobile">Automobile</option>
+                <option value="Walking">Walking</option>
+                <option value="Motorbike">Motorbike</option>
+                <option value="Bike">Bike</option>
+            </select>
+        </div>
+        
+            <input type="submit" value="Predict your Obesity Level" required />
+        </div>
+    </form>
+    <h2>THE  prediction is {{results}}</h2>
+   <body>
+</html>

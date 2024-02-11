@@ -1,0 +1,15 @@
+[ 2024-02-11 22:52:12,680 ] 28 root - INFO - Entered The Data Ingestion Method Or Components:->
+[ 2024-02-11 22:52:13,371 ] 31 root - INFO - Label Encoding Preprocess start :-->
+[ 2024-02-11 22:52:13,626 ] 39 root - INFO - {'Insufficient_Weight': 0, 'Normal_Weight': 1, 'Obesity_Type_I': 2, 'Obesity_Type_II': 3, 'Obesity_Type_III': 4, 'Overweight_Level_I': 5, 'Overweight_Level_II': 6}
+[ 2024-02-11 22:52:13,634 ] 40 root - INFO - Logging The Dataset And The DataFrame:->
+[ 2024-02-11 22:52:16,423 ] 44 root - INFO - Train Test Split Initiated:->
+[ 2024-02-11 22:52:17,506 ] 50 root - INFO - Ingestion Of The Data Is Completed !!!
+[ 2024-02-11 22:52:17,849 ] 76 root - INFO - Read train and test data completed
+[ 2024-02-11 22:52:17,851 ] 78 root - INFO - Obtaining preprocessing object
+[ 2024-02-11 22:52:17,852 ] 52 root - INFO - Categorical columns: ['Gender', 'family_history_with_overweight', 'FAVC', 'CAEC', 'SMOKE', 'SCC', 'CALC', 'MTRANS']
+[ 2024-02-11 22:52:17,852 ] 53 root - INFO - Numerical columns: ['Age', 'Height', 'Weight', 'FCVC', 'NCP', 'CH2O', 'FAF', 'TUE']
+[ 2024-02-11 22:52:17,858 ] 91 root - INFO - Applying preprocessing object on training dataframe and testing dataframe.
+[ 2024-02-11 22:52:18,362 ] 103 root - INFO - Saved preprocessing object.
+[ 2024-02-11 22:52:18,386 ] 25 root - INFO - Splitting Training And Test Input Data
+[ 2024-02-11 22:55:25,468 ] 36 root - INFO - Model Report Are : {'RandomForestClassifier': 0.8848747591522158, 'GradientBoostingClassifier': 0.9039017341040463, 'AdaBoostClassifier': 0.4328034682080925}
+[ 2024-02-11 22:55:25,488 ] 48 root - INFO - Best found model is GradientBoostingClassifier() on both training and testing dataset And Its Accuracy Is :--> 0.9039017341040463
