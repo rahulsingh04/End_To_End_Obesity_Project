@@ -32,25 +32,13 @@ To Run All The Notebook i.e DataIngestion, DataTransformation, ModelTrainer.py
 - [@RahulSingh](https://github.com/rahulsingh04)
 
 
-## Demo
-
-Insert gif or link to demo
 
 
-## Documentation
-
-[Documentation](https://linktodocumentation)
 
 
-## FAQ
 
-#### Question 1
 
-Answer 1
 
-#### Question 2
-
-Answer 2
 
 
 ## 🚀 About Me
